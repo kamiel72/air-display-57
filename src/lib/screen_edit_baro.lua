@@ -97,7 +97,7 @@ function edit_baro.set_digits(pressure)
     edit_baro.digits.decimal = (pressure * 100 - (pressure * 100) % 100) / 100
     edit_baro.digits.fraction = (pressure * 100) % 100
     txt_set(major, string.format("%g", edit_baro.digits.decimal))
-    txt_set(minor, string.format("%01f", edit_baro.digits.fraction))
+    txt_set(minor, string.format("%g", edit_baro.digits.fraction))
 end
 
 function update_altitude(pressure, altitude)
@@ -122,7 +122,7 @@ function edit_baro.dial_decimal(direction)
     if val < 0 then val = 0 end
     if val > 1065 then val = 1065 end
     edit_baro.digits.decimal = val
-    txt_set(major, string.format("%d", edit_baro.digits.decimal))
+    txt_set(major, string.format("%g", edit_baro.digits.decimal))
     update_altitude(get_pressure_from_digits(), edit_baro.alt)
 end
 
@@ -131,7 +131,7 @@ function edit_baro.dial_fraction(direction)
     if val < 0 then val = 0 end
     if val > 99 then val = 99 end
     edit_baro.digits.fraction = val
-    txt_set(minor, string.format("%d", edit_baro.digits.fraction))
+    txt_set(minor, string.format("%g", edit_baro.digits.fraction))
     update_altitude(get_pressure_from_digits(), edit_baro.alt)
 end
 

@@ -132,7 +132,9 @@ end
 function view_transponder.ident()
     if not view_transponder.editing then
         -- Trigger IDENT
-        edit_xpdr.ident()
+        xpl_command("sim/transponder/transponder_ident")
+        fsx_event("H:TransponderIDT")
+        fs2020_event("H:TransponderIDT")
     end
 end
 

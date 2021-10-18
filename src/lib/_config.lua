@@ -15,8 +15,8 @@ XPL_XPDR_MODE = {
     OFF = 0,
     STBY = 1,
     ON = 2,
-    TST = 3,
-    ALT = 4
+    ALT = 3,
+    TST = 4
 }
 FS_XPDR_MODE = {
     OFF = 0,

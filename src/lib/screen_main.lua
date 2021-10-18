@@ -119,7 +119,10 @@ function register_events(hasCom, hasAlt, hasXpdr)
         -- transponder and altimeter
         controls.add_listener("softkey-2", "PRESS", view_transponder.toggle_mode)
         controls.add_listener("softkey-2", "LONG_PRESS", view_transponder.toggle_mode)
+        controls.add_listener("softkey-3", "PRESS", view_transponder.ident)
         controls.add_listener("softkey-4", "PRESS", altimeter.start_edit)
+        controls.add_listener("rotary-inner", "TURN", view_transponder.start_edit)
+        controls.add_listener("rotary-outer", "TURN", view_transponder.start_edit)
     end
 
 end

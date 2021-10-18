@@ -176,14 +176,14 @@ function edit_xpdr.toggle_mode()
         edit_xpdr.mode = "STBY"
         txt_set(footer, "MODE: STBY")
         xpl_dataref_write("sim/cockpit/radios/transponder_mode","INT", XPL_XPDR_MODE.STBY)
-        fs2020_variable_write("TRANSPONDER STATE", FS_XPDR_MODE.STBY)
-        fsx_variable_write("TRANSPONDER STATE", FS_XPDR_MODE.STBY)
+        fs2020_variable_write("TRANSPONDER STATE:1", "Enum", FS_XPDR_MODE.STBY)
+        fsx_variable_write("TRANSPONDER STATE:1", "Enum", FS_XPDR_MODE.STBY)
     else
         edit_xpdr.mode = "ALT"
         txt_set(footer, "MODE: ALT")
         xpl_dataref_write("sim/cockpit/radios/transponder_mode","INT", XPL_XPDR_MODE.ALT)
-        fs2020_variable_write("TRANSPONDER STATE", FS_XPDR_MODE.ALT)
-        fsx_variable_write("TRANSPONDER STATE", FS_XPDR_MODE.ALT)
+        fs2020_variable_write("TRANSPONDER STATE:1", "Enum", FS_XPDR_MODE.ALT)
+        fsx_variable_write("TRANSPONDER STATE:1", "Enum", FS_XPDR_MODE.ALT)
     end
 end
 
@@ -200,8 +200,8 @@ function edit_xpdr.set_mode_on()
     edit_xpdr.mode = "ON"
     txt_set(footer, "MODE: ON")
     xpl_dataref_write("sim/cockpit/radios/transponder_mode","INT", XPL_XPDR_MODE.ON)
-    fs2020_variable_write("TRANSPONDER STATE", FS_XPDR_MODE.ON)
-    fsx_variable_write("TRANSPONDER STATE", FS_XPDR_MODE.ON)
+    fs2020_variable_write("TRANSPONDER STATE:1", "Enum", FS_XPDR_MODE.ON)
+    fsx_variable_write("TRANSPONDER STATE:1", "Enum", FS_XPDR_MODE.ON)
 end
 
 return edit_xpdr

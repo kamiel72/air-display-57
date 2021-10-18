@@ -33,7 +33,7 @@ end
 function edit_com.start_edit(stby_freq, end_callback)
     -- Start com edit
     edit_com.khz_val = stby_freq % 100
-    edit_com.mhz_val = stby_freq - stby_freq % 100
+    edit_com.mhz_val = (stby_freq - stby_freq % 100) / 100
     edit_com.end_callback = end_callback
 
     txt_set(mhz, string.format("%d", edit_com.mhz_val))

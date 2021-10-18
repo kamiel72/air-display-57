@@ -253,7 +253,6 @@ end
 function altimeter.start_edit()
     if not altimeter.editing then
         altimeter.editing = true
-        log("start edit", altimeter.pressure, altimeter.alt)
         edit_baro.start_edit(altimeter.pressure, altimeter.alt, altimeter.end_edit)
     end
 end
